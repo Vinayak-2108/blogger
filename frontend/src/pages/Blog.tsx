@@ -12,7 +12,7 @@ export const Blog = () => {
     }
     return (
         <div>
-            <BlogDetailed blog={blog}/>
+            {blog && <BlogDetailed blog={blog}/>}
         </div>
     );
 };
