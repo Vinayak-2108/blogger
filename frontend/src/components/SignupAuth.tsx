@@ -15,8 +15,8 @@ export const SignupAuth = () => {
     async function sendRequest() {
         try {
             const response = await axios.post(`${BACKEND_URL}/api/v1/user/signup`, postInputs)
-            if(response.data.error){
-                alert(response.data.error)
+            if(!response){
+                alert("Error: ")
                 return
             }
             const jwt = response.data.jwt;
