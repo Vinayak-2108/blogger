@@ -16,8 +16,8 @@ export const SigninAuth = () => {
             const jwt = response.data.jwt;
             localStorage.setItem("token", jwt);
             navigate("/blogs")
-        } catch (e) {
-            console.log(e)
+        } catch (e: any) {
+            alert(e.response.data.error)
         }
     }
     return (

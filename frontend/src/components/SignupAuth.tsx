@@ -22,9 +22,9 @@ export const SignupAuth = () => {
             const jwt = response.data.jwt;
             localStorage.setItem("token", jwt);
             navigate("/blogs")
-        } catch (e) {
+        } catch (e: any) {
             console.log(e)
-            alert("Error: " + e)
+            alert("Error: " + e.response.data.error)
         }
     }
     return (
@@ -38,7 +38,7 @@ export const SignupAuth = () => {
                             </div>
                             <div className="text-slate-400">
                                 Already have an account?
-                                <Link to="/signin" className="underline pl-2">Login</Link>
+                                <Link to="/" className="underline pl-2">Login</Link>
                             </div>
                         </div>
                         <div className="pt-4">
